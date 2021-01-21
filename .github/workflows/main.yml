@@ -1,17 +1,16 @@
-- name: Yamllint Github Action
-  # You may pin to the exact commit or the version.
-  # uses: karancode/yamllint-github-action@dd59165b84d90d37fc919c3c7dd84c7e37cd6bfb
-  uses: karancode/yamllint-github-action@v2.0.0
-  with:
-    # File or Directory to do yamllint on
-    yamllint_file_or_dir: # optional, default is .
-    # Use Strict
-    yamllint_strict: # optional, default is 0
-    # Custom yamllint config path
-    yamllint_config_filepath: # optional, default is 
-    # Custom configuration (as YAML source)
-    yamllint_config_datapath: # optional, default is 
-    # format for parsing output
-    yamllint_format: # optional, default is 
-    # Comment yamllint output
-    yamllint_comment: # optional, default is false
+name: 'Yamllint GitHub Actions'
+on:
+  - pull_request
+jobs:
+  yamllint:
+    name: 'Yamllint'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+      - name: 'Yamllint'
+        uses: karancode/yamllint-github-action@master
+        with:
+          yamllint_strict: false
+          yamllint_comment: true
+
