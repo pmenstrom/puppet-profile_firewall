@@ -2,6 +2,8 @@
 
 Part of NCSA Common Puppet Profiles
 
+![Yamllint GitHub Actions](https://github.com/pmenstrom/puppet-profile_firewall/workflows/Yamllint%20GitHub%20Actions/badge.svg)
+
 ## Usage
 In Puppetfile:
 ```
